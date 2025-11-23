@@ -2,7 +2,6 @@ import { compare, hash } from "bcrypt";
 import { User, Organisation, db, Log } from "../../src/db.js";
 import { handleError, handleSuccess } from "../middlewares/errorHandler.js";
 import { sendToken } from "../features.js";
-import isAuthorized from "../middlewares/authMiddleware.js";
 
 const registerOrgandUser = async (req, res) => {
   const { orgName, adminName, email, password } = req.body;
@@ -95,7 +94,7 @@ const loginUser = async (req, res) => {
     console.log(err);
   }
 };
-const logoutUser = async (isAuthorized, req, res) => {
+const logoutUser = async (req, res) => {
   const { logout } = req.body;
   const orgId = req.organisation_id;
   const userId = req.user;
