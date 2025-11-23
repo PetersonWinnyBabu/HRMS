@@ -1,9 +1,21 @@
 import React from "react";
+import api from "../services/api";
 
 const Logout = () => {
-  const logout = () => {
-    localStorage.setItem("auth_token", "");
-    window.location.reload();
+  const logout = async () => {
+    await api
+      .post("/auth/logout", {
+        logout: true,
+      })
+      .then((response) => {
+        if (response.status === 200) {
+          localStorage.removeItem("auth_token");
+          window.location.reload();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
   return (
     <button className="submit-button" onClick={logout}>

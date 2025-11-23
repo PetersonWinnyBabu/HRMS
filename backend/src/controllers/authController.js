@@ -2,6 +2,7 @@ import { compare, hash } from "bcrypt";
 import { User, Organisation, db, Log } from "../../src/db.js";
 import { handleError, handleSuccess } from "../middlewares/errorHandler.js";
 import { sendToken } from "../features.js";
+import isAuthorized from "../middlewares/authMiddleware.js";
 
 const registerOrgandUser = async (req, res) => {
   const { orgName, adminName, email, password } = req.body;
@@ -94,5 +95,25 @@ const loginUser = async (req, res) => {
     console.log(err);
   }
 };
+const logoutUser = async (isAuthorized, req, res) => {
+  const { logout } = req.body;
+  const orgId = req.organisation_id;
+  const userId = req.user;
 
-export { registerOrgandUser, loginUser };
+  try {
+    await Log.create({
+      organisation_id: orgId,
+      user_id: userId,
+      action: `User ${userId} Logged out successfully`,
+      meta: {
+        user_id: userId,
+        organisation_id: orgId,
+      },
+    });
+    return res.status(200).json("successfully logged out");
+  } catch (err) {
+    return res.status(400).json("Bad Request");
+  }
+};
+
+export { registerOrgandUser, loginUser, logoutUser };
