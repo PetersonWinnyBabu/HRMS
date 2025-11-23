@@ -5,7 +5,7 @@ const Logout = () => {
   const logout = async () => {
     await api
       .post("https://hrms-backend-ke9s.onrender.com/api/auth/logout", {
-        logout: true,
+        logout: "logout",
       })
       .then((response) => {
         if (response.status === 200) {
