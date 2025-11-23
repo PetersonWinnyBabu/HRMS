@@ -99,20 +99,21 @@ const logoutUser = async (isAuthorized, req, res) => {
   const { logout } = req.body;
   const orgId = req.organisation_id;
   const userId = req.user;
-
-  try {
-    await Log.create({
-      organisation_id: orgId,
-      user_id: userId,
-      action: `User ${userId} Logged out successfully`,
-      meta: {
-        user_id: userId,
+  if (logout === "logout") {
+    try {
+      await Log.create({
         organisation_id: orgId,
-      },
-    });
-    return res.status(200).json("successfully logged out");
-  } catch (err) {
-    return res.status(400).json("Bad Request");
+        user_id: userId,
+        action: `User ${userId} Logged out successfully`,
+        meta: {
+          user_id: userId,
+          organisation_id: orgId,
+        },
+      });
+      return res.status(200).json("successfully logged out");
+    } catch (err) {
+      return res.status(400).json("Bad Request");
+    }
   }
 };
 

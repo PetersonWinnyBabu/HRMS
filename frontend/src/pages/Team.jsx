@@ -3,7 +3,7 @@ import "./pages.css";
 import api from "../services/api";
 import { Link } from "react-router-dom";
 import TeamForm from "../components/TeamForm";
-import Logout from "../components/logout";
+import Logout from "../components/logout.jsx";
 
 const TeamListItem = (props) => {
   const { details } = props;

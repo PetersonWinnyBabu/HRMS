@@ -14,6 +14,7 @@ const Logout = () => {
         }
       })
       .catch((err) => {
+        alert("Something went Wrong");
         console.log(err);
       });
   };

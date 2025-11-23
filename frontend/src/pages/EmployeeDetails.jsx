@@ -4,7 +4,7 @@ import EmployeeForm from "../components/EmployeeForm";
 
 import api from "../services/api";
 import "./pages.css";
-import Logout from "../components/logout";
+import Logout from "../components/logout.jsx";
 const EmployeeDetails = () => {
   const [employeeDetails, setEmployeeDetails] = useState({});
   const [employeeTeamDetails, setEmployeeTeamDetails] = useState([]);
