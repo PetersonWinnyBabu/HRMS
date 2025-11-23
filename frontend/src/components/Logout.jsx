@@ -4,7 +4,7 @@ import api from "../services/api";
 const Logout = () => {
   const logout = async () => {
     await api
-      .post("/auth/logout", {
+      .post("https://hrms-backend-ke9s.onrender.com/api/auth/logout", {
         logout: true,
       })
       .then((response) => {
