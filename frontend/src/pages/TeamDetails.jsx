@@ -4,6 +4,7 @@ import TeamForm from "../components/TeamForm.jsx";
 import api from "../services/api";
 import "./pages.css";
 import AssignEmployee from "../components/AssignEmployee.jsx";
+import Logout from "../components/logout.jsx";
 
 const TeamDetailEmployeeListItem = (props) => {
   const { details, unAssignEmployee } = props;
@@ -80,6 +81,7 @@ const TeamDetails = () => {
 
   return (
     <div className="background-main">
+      <Logout />
       {showEditForm ? (
         <>
           <button
@@ -100,10 +102,7 @@ const TeamDetails = () => {
             </h1>
           </div>
           {showEmployeeList ? (
-            <AssignEmployee
-              setShowEmployeeList={setShowEmployeeList}
-             
-            />
+            <AssignEmployee setShowEmployeeList={setShowEmployeeList} />
           ) : (
             <>
               <h1 className="heading">Employees</h1>

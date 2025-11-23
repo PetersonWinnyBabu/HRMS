@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import "./pages.css";
+import Logout from "../components/logout";
 
 const Dashboard = () => {
   const [details, setDetails] = useState({});
@@ -22,6 +23,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-main">
+      <Logout/>
       <div className="dashboard-container">
         <h1 className="heading-1">HRMS Dashboard</h1>
         <h2 className="heading">{details.orgName}</h2>

@@ -3,6 +3,7 @@ import "./pages.css";
 import api from "../services/api";
 import { Link } from "react-router-dom";
 import TeamForm from "../components/TeamForm";
+import Logout from "../components/logout";
 
 const TeamListItem = (props) => {
   const { details } = props;
@@ -39,6 +40,7 @@ const Team = () => {
 
   return (
     <div className="background-main">
+      <Logout />
       <div className="employee-list-main">
         <h1 className="heading">Teams List</h1>
         <button

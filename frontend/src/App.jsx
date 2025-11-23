@@ -7,6 +7,7 @@ import Register from "./pages/Register.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import EmployeeDetails from "./pages/EmployeeDetails.jsx";
 import TeamDetails from "./pages/TeamDetails.jsx";
+import PrivateRoutes from "./services/PrivateRoutes.jsx";
 
 const App = () => {
   return (
@@ -14,11 +15,14 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/employees" element={<Employee />} />
-        <Route path="/employees/:id" element={<EmployeeDetails />} />
-        <Route path="/teams" element={<Team />} />
-        <Route path="/teams/:id" element={<TeamDetails />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+
+        <Route element={<PrivateRoutes />}>
+          <Route path="/employees" element={<Employee />} />
+          <Route path="/employees/:id" element={<EmployeeDetails />} />
+          <Route path="/teams" element={<Team />} />
+          <Route path="/teams/:id" element={<TeamDetails />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

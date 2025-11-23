@@ -4,6 +4,7 @@ import "./pages.css";
 import EmployeeForm from "../components/EmployeeForm";
 import EmployeeListItem from "../components/EmployeeListItem";
 import api from "../services/api";
+import Logout from "../components/logout";
 
 const Employee = () => {
   const [employeesList, setEmployeesList] = useState([]);
@@ -24,6 +25,7 @@ const Employee = () => {
 
   return (
     <div className="background-main">
+      <Logout />
       <div className="employee-list-main">
         <h1 className="heading-1">Employees List</h1>
 

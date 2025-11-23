@@ -4,6 +4,7 @@ import EmployeeForm from "../components/EmployeeForm";
 
 import api from "../services/api";
 import "./pages.css";
+import Logout from "../components/logout";
 const EmployeeDetails = () => {
   const [employeeDetails, setEmployeeDetails] = useState({});
   const [employeeTeamDetails, setEmployeeTeamDetails] = useState([]);
@@ -57,6 +58,7 @@ const EmployeeDetails = () => {
 
   return (
     <div className="background-main">
+      <Logout />
       {showEditForm ? (
         <>
           <button

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./pages.css";
+import Logout from "../components/logout";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -47,10 +48,11 @@ const Login = () => {
 
   useEffect(() => {
     returnDashboard();
-  }, );
+  }, []);
 
   return (
     <div className="background-main">
+    
       <div className="login-container-main">
         <img className="image-main" src="hrmanagement.jpg" alt="hrms" />
 
