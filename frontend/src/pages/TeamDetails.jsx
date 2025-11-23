@@ -4,7 +4,7 @@ import TeamForm from "../components/TeamForm.jsx";
 import api from "../services/api";
 import "./pages.css";
 import AssignEmployee from "../components/AssignEmployee.jsx";
-import Logout from "../components/logout.jsx";
+import Logout from "../components/Logout.jsx";
 
 const TeamDetailEmployeeListItem = (props) => {
   const { details, unAssignEmployee } = props;
