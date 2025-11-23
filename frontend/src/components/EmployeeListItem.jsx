@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import "../pages/pages.css";
 
 const EmployeeListItem = (props) => {
   const { details } = props;

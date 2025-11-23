@@ -12,7 +12,7 @@ const Employee = () => {
 
   useEffect(() => {
     api
-      .get("http://localhost:5000/api/employees")
+      .get("https://hrms-backend-ke9s.onrender.com/api/employees")
       .then((response) => {
         setEmployeesList(response.data.response);
         console.log(response);

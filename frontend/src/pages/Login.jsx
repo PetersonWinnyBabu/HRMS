@@ -22,7 +22,7 @@ const Login = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const url = "http://localhost:5000/api/auth/login";
+    const url = "https://hrms-backend-ke9s.onrender.com/api/auth/login";
 
     axios
       .post(url, {

@@ -43,7 +43,7 @@ const TeamDetails = () => {
 
   useEffect(() => {
     api
-      .get(`http://localhost:5000/api/teams/${id}`)
+      .get(`https://hrms-backend-ke9s.onrender.com/api/teams/${id}`)
       .then((response) => {
         console.log(response);
         assignDetails(response.data.response);
@@ -53,7 +53,7 @@ const TeamDetails = () => {
 
   const deleteTeam = async () => {
     await api
-      .delete(`http://localhost:5000/api/teams/${id}`)
+      .delete(`https://hrms-backend-ke9s.onrender.com/api/teams/${id}`)
       .then((response) => {
         if (response.status === 200) {
           alert(`Successfully Deleted Team ${id}`);
@@ -65,9 +65,12 @@ const TeamDetails = () => {
 
   const unAssignEmployee = async (empId) => {
     await api
-      .delete(`http://localhost:5000/api/teams/${id}/unassign`, {
-        data: { employee_id: empId, team_id: id },
-      })
+      .delete(
+        `https://hrms-backend-ke9s.onrender.com/api/teams/${id}/unassign`,
+        {
+          data: { employee_id: empId, team_id: id },
+        }
+      )
       .then((response) => {
         alert(response.data.message);
         window.location.reload(false);

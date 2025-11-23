@@ -27,7 +27,7 @@ const Team = () => {
 
   useEffect(() => {
     api
-      .get("http://localhost:5000/api/teams")
+      .get("https://hrms-backend-ke9s.onrender.com/api/teams")
       .then((response) => {
         console.log(response);
         setTeamsDetails(response.data.response);

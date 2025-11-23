@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 import { useParams } from "react-router-dom";
+import "../pages/pages.css";
 
 const AssignEmployeeItem = (props) => {
   const { details, selectedEmployees, assignEmployee } = props;
@@ -36,7 +37,7 @@ const AssignEmployee = (props) => {
 
   useEffect(() => {
     api
-      .get("http://localhost:5000/api/employees")
+      .get("https://hrms-backend-ke9s.onrender.com/api/employees")
       .then((response) => {
         setEmployees(response.data.response);
         console.log(response);
@@ -66,7 +67,7 @@ const AssignEmployee = (props) => {
 
   const assignBulk = () => {
     api
-      .post(`http://localhost:5000/api/teams/${id}/assign`, {
+      .post(`https://hrms-backend-ke9s.onrender.com/api/teams/${id}/assign`, {
         employeeIDs,
       })
       .then((response) => onSuccess(response.data))

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../services/api";
-
+import "../pages/pages.css";
 
 const EmployeeForm = (props) => {
   const [firstName, setFirstName] = useState("");
@@ -12,9 +12,9 @@ const EmployeeForm = (props) => {
 
   const { formType, id } = props;
   if (formType === "edit") {
-    url = `http://localhost:5000/api/employees/${id}`;
+    url = `https://hrms-backend-ke9s.onrender.com/api/employees/${id}`;
   } else {
-    url = "http://localhost:5000/api/employees";
+    url = "https://hrms-backend-ke9s.onrender.com/api/employees";
   }
 
   console.log(url);

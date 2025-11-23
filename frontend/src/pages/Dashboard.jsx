@@ -9,7 +9,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     api
-      .get("http://localhost:5000/api/organisation")
+      .get("https://hrms-backend-ke9s.onrender.com/api/organisation")
       .then((response) => {
         setDetails(response.data.response);
       })

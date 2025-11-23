@@ -19,7 +19,7 @@ const EmployeeDetails = () => {
 
   useEffect(() => {
     api
-      .get(`http://localhost:5000/api/employees/${id}`)
+      .get(`https://hrms-backend-ke9s.onrender.com/api/employees/${id}`)
       .then((response) => {
         console.log(response);
         assignDetails(response.data.response);
@@ -29,7 +29,7 @@ const EmployeeDetails = () => {
 
   const deleteEmp = async () => {
     await api
-      .delete(`http://localhost:5000/api/employees/${id}`)
+      .delete(`https://hrms-backend-ke9s.onrender.com/api/employees/${id}`)
       .then((response) => {
         if (response.status === 200) {
           alert(`Successfully Deleted Employee ${id}`);
@@ -40,9 +40,12 @@ const EmployeeDetails = () => {
   };
   const unAssign = async (teamId) => {
     await api
-      .delete(`http://localhost:5000/api/teams/${teamId}/unassign`, {
-        data: { employee_id: id, team_id: teamId },
-      })
+      .delete(
+        `https://hrms-backend-ke9s.onrender.com/api/teams/${teamId}/unassign`,
+        {
+          data: { employee_id: id, team_id: teamId },
+        }
+      )
       .then((response) => {
         if (response.status === 200) {
           alert(response.data.message);

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../services/api";
-
+import "../pages/pages.css";
 const TeamForm = (props) => {
   const { formType, id } = props;
   const [teamName, setTeamName] = useState("");
@@ -9,9 +9,9 @@ const TeamForm = (props) => {
   let url = "";
 
   if (formType === "edit") {
-    url = `http://localhost:5000/api/teams/${id}`;
+    url = `https://hrms-backend-ke9s.onrender.com/api/teams/${id}`;
   } else {
-    url = "http://localhost:5000/api/teams";
+    url = "https://hrms-backend-ke9s.onrender.com/api/teams";
   }
 
   const onSuccess = (data) => {

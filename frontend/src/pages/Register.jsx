@@ -11,7 +11,7 @@ const Register = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault();
-    const url = "http://localhost:5000/api/auth/register";
+    const url = "https://hrms-backend-ke9s.onrender.com/api/auth/register";
 
     axios
       .post(url, {
