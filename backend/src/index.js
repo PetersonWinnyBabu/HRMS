@@ -26,7 +26,7 @@ app.use(cookieParser());
 //Middlewares
 app.use(
   cors({
-    origin: "https://hrms-orcin-seven.vercel.app/",
+    origin: "https://hrms-orcin-seven.vercel.app",
     credentials: true,
   })
 );
