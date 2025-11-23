@@ -1,16 +1,92 @@
-# React + Vite
+# HRMS Frontend (React + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+------------------------------------------------------------------------
 
-Currently, two official plugins are available:
+## 🚀 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The **HRMS Frontend** is a modern web application designed to manage
+essential Human Resource Operations such as employee records,
+attendance, leave management, and performance tracking. Built using
+**React 19** and **Vite**, it provides a fast, responsive, and scalable
+UI layer for HR operations.
 
-## React Compiler
+------------------------------------------------------------------------
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📦 Tech Stack
 
-## Expanding the ESLint configuration
+-   **React 19** -- Component-based UI library\
+-   **Vite** -- Ultra‑fast development & bundling\
+-   **React Router v7** -- SPA navigation\
+-   **Axios** -- API communication\
+-   **React Modal** -- Accessible modals\
+-   **ESLint** -- Code linting and standards
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+------------------------------------------------------------------------
+
+## 📂 Project Structure
+
+    frontend/
+    ├── src/
+    │   ├── components/
+    │   ├── pages/
+    │   ├── hooks/
+    │   ├── context/
+    │   └── main.jsx
+    ├── index.html
+    ├── package.json
+    ├── vite.config.js
+    ├── eslint.config.js
+    ├── .env
+    └── .gitignore
+
+------------------------------------------------------------------------
+
+## 🔧 Installation & Setup
+
+Install dependencies:
+
+    npm install
+
+Run development server:
+
+    npm run dev
+
+Build production assets:
+
+    npm run build
+
+Preview production:
+
+    npm run preview
+
+Lint the project:
+
+    npm run lint
+
+------------------------------------------------------------------------
+
+## ✨ Features
+
+-   Manage employee data\
+-   Track attendance and leave\
+-   Smooth single‑page navigation\
+-   API‑driven dynamic content\
+-   Modular and scalable folder structure\
+-   Optimized performance with Vite\
+-   Built‑in linting to maintain clean code
+
+------------------------------------------------------------------------
+
+## 🧪 Code Quality
+
+ESLint is configured with: - React Hooks rules\
+- React Fast Refresh rules\
+- Recommended JS best practices
+
+------------------------------------------------------------------------
+
+
+## 📜 License
+
+This project is unlicensed by default. Add a `LICENSE` file for
+distribution or open‑source use.
